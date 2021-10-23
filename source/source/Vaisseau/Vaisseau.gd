@@ -8,8 +8,10 @@ var on_screen=true;
 var _poubelle;
 var victoire = false
 var force = Vector2.ZERO;
+var oldMouse;
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	oldMouse = get_global_mouse_position()
 	pass # Replace with function body.
 
 func _process(_delta):
@@ -35,6 +37,7 @@ func _process(_delta):
 				victoire = true
 			else:
 				get_parent().get_parent().gameOver()
+	
 func launch(dest):
 	velocity = (dest - position).normalized() * speed;
 	is_moving = true
