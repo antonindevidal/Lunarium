@@ -7,15 +7,24 @@ var speed = 500;
 var on_screen=true;
 var _poubelle;
 var victoire = false
+var force = Vector2.ZERO;
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 func _process(_delta):
 	if get_parent().get_parent().is_playing:
+		var lesPlanetes = get_parent().get_children()
+		force = Vector2.ZERO
+		for i in lesPlanetes:
+			if i.is_in_group("Planete"):
+				if i.radius > position.distance_to(i.position):
+					force = (i.position - position)*i.forceAttraction;
+					print(i.forceAttraction)
 		if Input.is_action_just_released("launch") and not is_moving:
 			launch(get_global_mouse_position())
 		if is_moving:
+			velocity = (velocity + force).normalized() * speed
 			_poubelle = move_and_slide(velocity)
 		else:
 			look_at(get_global_mouse_position())
