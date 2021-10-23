@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 var forceAttraction = 0.1;
-var radius = 200;
+var radius = 300;
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"

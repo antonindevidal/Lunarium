@@ -21,7 +21,7 @@ func _process(_delta):
 		for i in lesPlanetes:
 			if i.is_in_group("Planete"):
 				if i.radius > position.distance_to(i.position):
-					force = (i.position - position)*i.forceAttraction;
+					force = force + (i.position - position)*i.forceAttraction;
 		if Input.is_action_just_released("launch") and not is_moving:
 			launch(get_global_mouse_position())
 		if is_moving:
