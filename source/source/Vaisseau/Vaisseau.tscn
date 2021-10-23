@@ -6,7 +6,7 @@
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 22.685
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=2]
 script/source = "extends CollisionShape2D
 
 
@@ -20,7 +20,7 @@ func _ready():
 #	pass
 "
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
@@ -33,12 +33,12 @@ script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
-script = SubResource( 3 )
+script = SubResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 1.40477, 3.86805 )
 scale = Vector2( 0.101, 0.105 )
-frames = SubResource( 2 )
+frames = SubResource( 3 )
 
 [node name="notifier" type="VisibilityNotifier2D" parent="."]
 position = Vector2( 2.65164, 1.94454 )

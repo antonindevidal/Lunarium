@@ -1,0 +1,17 @@
+[gd_scene format=2]
+
+[node name="StartMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1031.7
+margin_bottom = -552.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 224.0
+margin_top = 168.0
+margin_right = 768.0
+margin_bottom = 352.0
+text = "Voici le debut du jeu"

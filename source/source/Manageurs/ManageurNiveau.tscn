@@ -4,6 +4,7 @@
 [ext_resource path="res://source/Manageurs/ManageurNiveau.gd" type="Script" id=2]
 
 [node name="ManageurNiveau" type="Node2D"]
+pause_mode = 1
 script = ExtResource( 2 )
 
 [node name="NiveauTemplate" parent="." instance=ExtResource( 1 )]
