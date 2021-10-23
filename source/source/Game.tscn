@@ -1,18 +1,53 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
+[ext_resource path="res://ressources/Fond/fond_couleur.png" type="Texture" id=1]
 [ext_resource path="res://source/Game.gd" type="Script" id=2]
 [ext_resource path="res://source/Layouts/StartMenu/StartMenu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ressources/Fond/fond_grandes.png" type="Texture" id=4]
+[ext_resource path="res://ressources/Fond/fond_petites.png" type="Texture" id=5]
+[ext_resource path="res://ressources/Fond/fond_constellations.png" type="Texture" id=6]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 1024, 600 )
+position = Vector2( 0, 0.00012207 )
 current = true
 zoom = Vector2( 2, 2 )
 
 [node name="StartMenu" parent="." instance=ExtResource( 3 )]
-margin_left = 432.0
-margin_top = 288.0
-margin_right = 432.0
-margin_bottom = 288.0
+margin_left = -1024.0
+margin_top = -600.0
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Fond" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/Fond"]
+position = Vector2( -63.9998, 60 )
+scale = Vector2( 1.91667, 1.87407 )
+texture = ExtResource( 1 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( -64, -3.99995 )
+scale = Vector2( 1.75833, 1.65185 )
+texture = ExtResource( 6 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2( 92.0002, 176 )
+scale = Vector2( 1.67083, 1.55556 )
+texture = ExtResource( 5 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2( -160, 104 )
+scale = Vector2( 1.26667, 1.17037 )
+texture = ExtResource( 4 )
