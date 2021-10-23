@@ -20,12 +20,12 @@ func _process(_delta):
 			if i.is_in_group("Planete"):
 				if i.radius > position.distance_to(i.position):
 					force = (i.position - position)*i.forceAttraction;
-					print(i.forceAttraction)
 		if Input.is_action_just_released("launch") and not is_moving:
 			launch(get_global_mouse_position())
 		if is_moving:
 			velocity = (velocity + force).normalized() * speed
 			_poubelle = move_and_slide(velocity)
+			look_at(velocity + position)
 		else:
 			look_at(get_global_mouse_position())
 		if not get_node("notifier").is_on_screen():
