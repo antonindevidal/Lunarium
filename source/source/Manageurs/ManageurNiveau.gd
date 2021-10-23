@@ -5,6 +5,7 @@ var currentNiveau = -1;
 
 var countTMP = 120;
 
+var Vaisseau_on_screen = true;
 # Called when the node enters the scene tree for the first time.
 func _init():
 	loadNiveau();
@@ -20,6 +21,10 @@ func _process(_delta):
 	if countTMP == 0 :
 		nextNiveau();
 		countTMP = -1;
+	
+	Vaisseau_on_screen = (get_node("NiveauTemplate").get_node("Vaisseau")).is_on_screen()
+	if not Vaisseau_on_screen:
+		gameOver()
 	pass;
 
 func loadNiveau():
@@ -30,5 +35,10 @@ func loadNiveau():
 func nextNiveau():
 	currentNiveau=currentNiveau + 1;
 	remove_child(get_child(0));
-	add_child(load(arrayNiveau[currentNiveau]).instance());
+	var tmp : Node =load(arrayNiveau[currentNiveau]).instance()
+	tmp.name = "NiveauTemplate"
+	add_child(tmp);
 	pass;
+
+func gameOver():
+	print("GameOver")

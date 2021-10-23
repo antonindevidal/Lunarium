@@ -39,3 +39,7 @@ script = SubResource( 3 )
 position = Vector2( 1.40477, 3.86805 )
 scale = Vector2( 0.101, 0.105 )
 frames = SubResource( 2 )
+
+[node name="notifier" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 2.65164, 1.94454 )
+scale = Vector2( 2.46725, 3.28042 )
