@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Vaisseau.png-95dd1aca6a3074c2505652d9a3a8f68b.stex"
+path="res://.import/vaisseau.png-2915b512e6d96eae1e13626435873e3f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/Vaisseau/Vaisseau.png"
-dest_files=[ "res://.import/Vaisseau.png-95dd1aca6a3074c2505652d9a3a8f68b.stex" ]
+source_file="res://ressources/Vaisseau/vaisseau.png"
+dest_files=[ "res://.import/vaisseau.png-2915b512e6d96eae1e13626435873e3f.stex" ]
 
 [params]
 
