@@ -15,13 +15,10 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(_delta):
+	oldMouse=get_global_mouse_position()
 	if get_parent().get_parent().is_playing:
-		var lesPlanetes = get_parent().get_children()
-		force = Vector2.ZERO
-		for i in lesPlanetes:
-			if i.is_in_group("Planete"):
-				if i.radius > position.distance_to(i.position):
-					force = force + (i.position - position)*i.forceAttraction;
+		force = calcDir(position)
+		
 		if Input.is_action_just_released("launch") and not is_moving:
 			launch(get_global_mouse_position())
 		if is_moving:
@@ -44,3 +41,12 @@ func launch(dest):
 
 func is_on_screen():
 	return on_screen
+	
+func calcDir(pos):
+	var lesPlanetes = get_parent().get_children()
+	force = Vector2.ZERO
+	for i in lesPlanetes:
+		if i.is_in_group("Planete"):
+			if i.radius > pos.distance_to(i.position):
+				force = force + (i.position - pos)*i.forceAttraction;
+	return force
