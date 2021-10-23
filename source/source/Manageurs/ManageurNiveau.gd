@@ -14,7 +14,7 @@ func _ready():
 	nextNiveau();
 	pass;
 	
-func _process(delta):
+func _process(_delta):
 	if countTMP>0:
 		countTMP = countTMP -1;
 	if countTMP == 0 :
@@ -31,5 +31,4 @@ func nextNiveau():
 	currentNiveau=currentNiveau + 1;
 	remove_child(get_child(0));
 	add_child(load(arrayNiveau[currentNiveau]).instance());
-	print(get_children())
 	pass;
