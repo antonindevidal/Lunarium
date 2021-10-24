@@ -12,13 +12,13 @@
 [ext_resource path="res://ressources/Planetes/Contours/ZoneGravitator.png" type="Texture" id=10]
 [ext_resource path="res://ressources/Planetes/Contours/ZoneVerte.png" type="Texture" id=11]
 [ext_resource path="res://ressources/Planetes/Contours/ZoneRouge.png" type="Texture" id=12]
-[ext_resource path="res://ressources/CursorTest.png" type="Texture" id=13]
+[ext_resource path="res://ressources/Planetes/Centres/gravitateur.png" type="Texture" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 3 ) ],
+"frames": [  ],
 "loop": true,
-"name": "Rouge",
+"name": "Vide",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 13 ) ],
@@ -26,14 +26,14 @@ animations = [ {
 "name": "Gravitator",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Rouge",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "Vert",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "Bleu",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
@@ -41,14 +41,14 @@ animations = [ {
 "name": "Jaune",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "Bleu",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "Rose",
-"speed": 5.0
-}, {
-"frames": [  ],
-"loop": true,
-"name": "Vide",
 "speed": 5.0
 } ]
 
@@ -57,9 +57,9 @@ radius = 96.3328
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 12 ) ],
+"frames": [  ],
 "loop": true,
-"name": "Rouge",
+"name": "Vide",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 10 ) ],
@@ -67,14 +67,14 @@ animations = [ {
 "name": "Gravitator",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "Rouge",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 11 ) ],
 "loop": true,
 "name": "Vert",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "Bleu",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],
@@ -82,14 +82,14 @@ animations = [ {
 "name": "Jaune",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "Bleu",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
 "name": "Rose",
-"speed": 5.0
-}, {
-"frames": [  ],
-"loop": true,
-"name": "Vide",
 "speed": 5.0
 } ]
 

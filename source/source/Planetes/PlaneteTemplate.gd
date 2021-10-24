@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-export var forceAttraction = 0.02;
+export var forceAttraction = 0.05;
 var radius = 300;
 var Couleur = ["Rouge", "Bleu", "Vert", "Jaune","Rose"]
 var rng = RandomNumberGenerator.new()
@@ -22,6 +22,10 @@ func _ready():
 func setColor(col : String):
 	get_node("AnimatedSprite").animation = col
 	get_node("ZoneGrav").animation = col
+	if col == "Gravitator":
+		rng.randomize()
+		var my_random_number = rng.randf_range(0,2*PI)
+		get_node("AnimatedSprite").rotate(my_random_number)
 
 func changeRadius(addVal):
 	radius = radius + addVal

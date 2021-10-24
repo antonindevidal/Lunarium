@@ -3,7 +3,7 @@ extends KinematicBody2D
 
 var is_moving = false;
 var velocity = Vector2.ZERO;
-var speed = 500;
+var speed = 800;
 var on_screen=true;
 var _poubelle;
 var victoire = false
