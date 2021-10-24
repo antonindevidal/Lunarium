@@ -19,19 +19,29 @@ animations = [ {
 "name": "Jaune",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "Bleu",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "Rose",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [  ],
 "loop": true,
-"name": "Verte",
+"name": "Vide",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ) ],
+"frames": [  ],
 "loop": true,
-"name": "Bleu",
+"name": "Gravitator",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "Vert",
 "speed": 5.0
 } ]
 
@@ -46,7 +56,7 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.15, 0.15 )
 frames = SubResource( 1 )
-animation = "Rose"
+animation = "Vide"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
