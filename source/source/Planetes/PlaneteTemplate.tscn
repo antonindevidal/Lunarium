@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://ressources/Planetes/Centres/planète_bleue_verte.png" type="Texture" id=1]
 [ext_resource path="res://source/Planetes/PlaneteTemplate.gd" type="Script" id=2]
@@ -6,6 +6,12 @@
 [ext_resource path="res://ressources/Planetes/Centres/planète_jaune.png" type="Texture" id=4]
 [ext_resource path="res://ressources/Planetes/Centres/planète_verte.png" type="Texture" id=5]
 [ext_resource path="res://ressources/Planetes/Centres/planète_rose.png" type="Texture" id=6]
+[ext_resource path="res://ressources/Planetes/Contours/ZoneBleu.png" type="Texture" id=7]
+[ext_resource path="res://ressources/Planetes/Contours/ZoneJaune.png" type="Texture" id=8]
+[ext_resource path="res://ressources/Planetes/Contours/ZoneRose.png" type="Texture" id=9]
+[ext_resource path="res://ressources/Planetes/Contours/ZoneGravitator.png" type="Texture" id=10]
+[ext_resource path="res://ressources/Planetes/Contours/ZoneVerte.png" type="Texture" id=11]
+[ext_resource path="res://ressources/Planetes/Contours/ZoneRouge.png" type="Texture" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -19,11 +25,6 @@ animations = [ {
 "name": "Jaune",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "Bleu",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "Rose",
@@ -32,6 +33,11 @@ animations = [ {
 "frames": [  ],
 "loop": true,
 "name": "Vide",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "Bleu",
 "speed": 5.0
 }, {
 "frames": [  ],
@@ -48,6 +54,44 @@ animations = [ {
 [sub_resource type="CircleShape2D" id=2]
 radius = 48.0
 
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "Rouge",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "Jaune",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "Rose",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Vide",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "Bleu",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "Gravitator",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "Vert",
+"speed": 5.0
+} ]
+
 [node name="PlaneteTemplate" type="StaticBody2D" groups=[
 "Planete",
 ]]
@@ -60,3 +104,8 @@ animation = "Vide"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
+
+[node name="ZoneGrav" type="AnimatedSprite" parent="."]
+scale = Vector2( 4, 4 )
+frames = SubResource( 3 )
+animation = "Vide"

@@ -1,8 +1,8 @@
 extends StaticBody2D
 
 var forceAttraction = 0.1;
-var radius = 300;
-var Couleur = ["Rouge", "Bleu", "Verte", "Jaune","Rose"]
+var radius = 200;
+var Couleur = ["Rouge", "Bleu", "Vert", "Jaune","Rose"]
 var rng = RandomNumberGenerator.new()
 # Declare member variables here. Examples:
 # var a = 2
@@ -22,3 +22,4 @@ func _ready():
 func setColor(col : String):
 	print(col)
 	get_node("AnimatedSprite").animation = col
+	get_node("ZoneGrav").animation = col
