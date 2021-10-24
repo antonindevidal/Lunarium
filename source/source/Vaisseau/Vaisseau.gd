@@ -45,7 +45,8 @@ func _process(_delta):
 			
 			if get_slide_collision(i).collider:
 				if get_slide_collision(i).collider.is_in_group("Lune"):
-					victoire = true
+					print(get_parent().get_parent().name)
+					get_parent().get_parent().victoire()
 				elif get_slide_collision(i).collider.is_in_group("Station"):
 					get_slide_collision(i).collider.queue_free()
 					get_parent().get_parent().slide(1)

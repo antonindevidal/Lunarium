@@ -25,6 +25,7 @@ func _ready():
 	pass;
 	
 func _process(_delta):
+	print(get_parent().is_playing)
 	if Input.is_action_just_released("Skip"):
 		nextNiveau()
 	if get_parent().is_playing :
@@ -34,8 +35,8 @@ func _process(_delta):
 				gameOver()
 			if (get_node("NiveauTemplate").get_node("Vaisseau")).victoire:
 				victoire()
-			if Input.is_action_just_pressed("Reload"):
-				reloadNiveau()
+		if Input.is_action_just_pressed("Reload"):
+			reloadNiveau()
 		if Input.is_action_just_released("AdderGravitator"):
 			addGravitator(get_global_mouse_position())
 		if slide:
@@ -102,7 +103,6 @@ func gameOver():
 	get_parent().setGameOver()
 	
 func victoire():
-	print("Victoire")
 	if currentNiveau < arrayNiveau.size()-1:
 		nextNiveau()
 
