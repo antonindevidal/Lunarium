@@ -16,10 +16,10 @@ func _ready():
 
 func _process(_delta):
 	oldMouse=get_global_mouse_position()
-	if get_parent().get_parent().is_playing:
+	if get_parent().get_parent().get_parent().is_playing :
 		force = calcDir(position)
 		
-		if Input.is_action_just_released("launch") and not is_moving:
+		if Input.is_action_just_released("launch") and not is_moving and get_parent().get_parent().get_parent().nbClic >1:
 			launch(get_global_mouse_position())
 		if is_moving:
 			velocity = (velocity + force).normalized() * speed

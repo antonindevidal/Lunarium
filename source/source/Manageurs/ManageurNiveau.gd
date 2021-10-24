@@ -2,7 +2,6 @@ extends Node2D
 
 var arrayNiveau = [];
 var currentNiveau = 0;
-var is_playing = false;
 
 var nbGravitator = 5;
 var test=true
@@ -17,8 +16,7 @@ func _ready():
 	pass;
 	
 func _process(_delta):
-	is_playing = true
-	if is_playing:
+	if get_parent().is_playing and get_parent().nbClic > 1:
 		Vaisseau_on_screen = (get_node("NiveauTemplate").get_node("Vaisseau")).is_on_screen()
 		if not Vaisseau_on_screen:
 			gameOver()
@@ -46,9 +44,14 @@ func loadNiveau(nb):
 	var tmp : Node =load(arrayNiveau[nb]).instance()
 	tmp.name = "NiveauTemplate"
 	add_child(tmp);
+func reloadNiveau():
+	remove_child(get_child(0));
+	var tmp : Node =load(arrayNiveau[currentNiveau]).instance()
+	tmp.name = "NiveauTemplate"
+	add_child(tmp);
 
 func gameOver():
-	print("GameOver")
+	get_parent().setGameOver()
 	
 func victoire():
 	print("Victoire")

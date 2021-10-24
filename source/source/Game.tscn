@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://ressources/Fond/fond_couleur.png" type="Texture" id=1]
 [ext_resource path="res://source/Game.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://source/Layouts/GameOver/GameOver.tscn" type="PackedScene" id=4]
 [ext_resource path="res://ressources/Fond/fond_petites.png" type="Texture" id=5]
 [ext_resource path="res://ressources/Fond/fond_constellations.png" type="Texture" id=6]
+[ext_resource path="res://source/Manageurs/ManageurNiveau.tscn" type="PackedScene" id=7]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 2 )
@@ -22,6 +23,7 @@ margin_right = 1024.0
 margin_bottom = 600.0
 
 [node name="GameOver" parent="." instance=ExtResource( 4 )]
+visible = false
 anchor_right = 0.0
 margin_left = -1024.0
 margin_top = -600.0
@@ -76,3 +78,6 @@ texture = ExtResource( 5 )
 [node name="Sprite11" type="Sprite" parent="ParallaxBackground/Couche1"]
 position = Vector2( 960, 540 )
 texture = ExtResource( 5 )
+
+[node name="ManageurNiveau" parent="." instance=ExtResource( 7 )]
+visible = false
