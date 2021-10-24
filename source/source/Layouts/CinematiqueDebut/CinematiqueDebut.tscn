@@ -103,16 +103,16 @@ texture = ExtResource( 6 )
 [node name="text" type="Label" parent="nuage"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -1397.99
-margin_top = -322.419
-margin_right = -452.993
-margin_bottom = 230.581
+margin_left = -1527.86
+margin_top = -318.047
+margin_right = -364.857
+margin_bottom = 234.953
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "à la suite d'un choc, 
 la lune se fractionna 
-et 4 morceaux partirent 
-à la dérive"
+et quatre morceaux partirent 
+à la dérive..."
 align = 1
 valign = 1
 __meta__ = {
