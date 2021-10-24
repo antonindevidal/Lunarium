@@ -1,15 +1,127 @@
-[gd_scene format=2]
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://ressources/Font/Starjedi.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://ressources/Vaisseau/Vaisseau.png" type="Texture" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 120
+use_filter = true
+extra_spacing_char = 11
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "SpaceShipAnim"
+length = 8.0
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Vaisseau:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( -1060.65, -0.25, 0, 0.25, 0, 2216.28, -0.25, 0, 0.25, 0, 434.097, -0.25, 0, 0.25, 0, -1671, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 3, 5.5, 7.5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Vaisseau:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 440.781, -0.25, 0, 0.25, 0, -93.5306, -0.25, 0, 0.25, 0, -1205.2, -0.25, 0, 0.25, 0, 158.404, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 3, 5.5, 7.5 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Vaisseau:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -30.3, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 3, 5.5, 7.5 )
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Nouvelle animation"
+length = 4.0
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("StartText:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"points": PoolRealArray( 201, -0.25, 0, 0.25, 0, 201, -0.25, 0, 0.25, 0, 201, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2, 4 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("StartText:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 523, -0.25, 0, 0.25, 0, 480, -0.25, 0, 0.25, 0, 523, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 2, 4 )
+}
 
 [node name="StartMenu" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+margin_right = 1024.0
+margin_bottom = 600.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 224.0
-margin_top = 168.0
-margin_right = 768.0
-margin_bottom = 352.0
-text = "Voici le debut du jeu"
+[node name="Vaisseau" type="Sprite" parent="."]
+position = Vector2( -403.377, 333.611 )
+rotation = -0.106072
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 2 )
+
+[node name="TitleText" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -358.5
+margin_right = 358.5
+margin_bottom = 192.0
+custom_fonts/font = SubResource( 1 )
+text = "lunarium"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartText" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -311.0
+margin_top = -104.934
+margin_right = 311.0
+margin_bottom = -27.9321
+custom_fonts/font = SubResource( 2 )
+text = "Press space to start"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShipAnimation" type="AnimationPlayer" parent="."]
+autoplay = "SpaceShipAnim"
+anims/SpaceShipAnim = SubResource( 3 )
+
+[node name="StartTextAnimation" type="AnimationPlayer" parent="."]
+autoplay = "Nouvelle animation"
+"anims/Nouvelle animation" = SubResource( 4 )

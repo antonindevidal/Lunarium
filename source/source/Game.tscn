@@ -16,12 +16,16 @@ current = true
 zoom = Vector2( 3.5, 3.5 )
 
 [node name="StartMenu" parent="." instance=ExtResource( 3 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = -1024.0
 margin_top = -600.0
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_right = 0.0
+margin_bottom = 0.0
+rect_scale = Vector2( 2, 2 )
 
 [node name="GameOver" parent="." instance=ExtResource( 4 )]
+visible = false
 anchor_right = 0.0
 margin_left = -1024.0
 margin_top = -600.0
