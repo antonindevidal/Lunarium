@@ -6,6 +6,7 @@ var currentNiveau = 0;
 var nbGravitator = 5;
 var test=true
 var Vaisseau_on_screen = true;
+var ZoneChanger = 5;
 # Called when the node enters the scene tree for the first time.
 func _init():
 	loadNiveaux();
@@ -23,12 +24,21 @@ func _process(_delta):
 				gameOver()
 			if (get_node("NiveauTemplate").get_node("Vaisseau")).victoire:
 				victoire()
-				
 			if Input.is_action_just_pressed("Reload"):
 				loadNiveau(currentNiveau)
 		if Input.is_action_just_released("AdderGravitator"):
 			addGravitator(get_global_mouse_position())
 	pass;
+
+func _input(event : InputEvent) -> void:
+	if event is InputEventMouseButton:
+		event as InputEventMouseButton
+		if event.pressed:
+			match event.button_index:
+				BUTTON_WHEEL_UP:
+					changeZone(ZoneChanger, get_local_mouse_position())
+				BUTTON_WHEEL_DOWN:
+					changeZone(-ZoneChanger, get_local_mouse_position())
 
 func loadNiveaux():
 	arrayNiveau.append("res://source/Niveaux/Niveau0/Niveau0.tscn");
@@ -62,5 +72,12 @@ func victoire():
 func addGravitator(coord):
 	var grav = preload("res://source/Planetes/PlaneteTemplate.tscn").instance();
 	grav.init(coord);
-	grav.setColor("Bleu")
+	grav.setColor("Gravitator")
 	get_node("NiveauTemplate").add_child(grav);
+
+func changeZone(val, pos : Vector2):
+	for i in get_node("NiveauTemplate").get_children():
+		if i.is_in_group("Planete"):
+			if pos.distance_to(i.position)<100:
+				if i.get_node("AnimatedSprite").animation == "Gravitator":
+					i.changeRadius(val)
