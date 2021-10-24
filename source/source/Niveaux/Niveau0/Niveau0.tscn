@@ -26,32 +26,11 @@ func _ready():
 [node name="Niveau0" type="Node2D"]
 script = SubResource( 1 )
 
-[node name="PlaneteTemplate5" parent="." instance=ExtResource( 2 )]
-position = Vector2( -752, -32 )
-
-[node name="PlaneteTemplate" parent="." instance=ExtResource( 2 )]
-position = Vector2( 760, 160 )
-
-[node name="PlaneteTemplate2" parent="." instance=ExtResource( 2 )]
-position = Vector2( -280, -512 )
-
 [node name="Vaisseau" parent="." instance=ExtResource( 3 )]
 position = Vector2( -1700, 0 )
 
 [node name="BoutLune" parent="." instance=ExtResource( 4 )]
-position = Vector2( -144, -240 )
-
-[node name="PlaneteTemplate3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 280, -424 )
-
-[node name="PlaneteTemplate4" parent="." instance=ExtResource( 2 )]
-position = Vector2( -264, -16 )
-
-[node name="PlaneteTemplate6" parent="." instance=ExtResource( 2 )]
-position = Vector2( -808, -576 )
+position = Vector2( -64, 16 )
 
 [node name="PlaneteTemplate7" parent="." instance=ExtResource( 2 )]
-position = Vector2( -1224, -336 )
-
-[node name="PlaneteTemplate8" parent="." instance=ExtResource( 2 )]
-position = Vector2( 56, 264 )
+position = Vector2( -720, -8 )

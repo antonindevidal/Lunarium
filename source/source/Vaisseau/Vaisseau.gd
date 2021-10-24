@@ -47,7 +47,8 @@ func launch(dest):
 	is_moving = true
 
 func is_on_screen():
-	return on_screen
+	#return on_screen
+	return true
 	
 func calcDir(pos):
 	var lesPlanetes = get_parent().get_children()
