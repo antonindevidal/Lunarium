@@ -1,0 +1,222 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://ressources/Font/Starjedi.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://ressources/Planetes/planète_bleue_verte.png" type="Texture" id=2]
+[ext_resource path="res://ressources/Planetes/planète_rouge.png" type="Texture" id=3]
+[ext_resource path="res://ressources/Vaisseau/vaisseau2.png" type="Texture" id=4]
+[ext_resource path="res://ressources/Vaisseau/vaisseau1.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "CreditAnimatio"
+length = 40.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Credit:rect_position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 261, -0.25, 0, 0.25, 0, 261, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 20 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Credit:rect_position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 800, -0.25, 0, 0.25, 0, -1107.84, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 20 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("End:rect_position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 247, -0.25, 0, 0.25, 0, 247, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 15, 25 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("End:rect_position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 707.146, -0.25, 0, 0.25, 0, 220, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 15, 25 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("SceneAnimation/planète_bleue_verte:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 135, -0.25, 0, 0.25, 0, 135, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 2.1, 23 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("SceneAnimation/planète_bleue_verte:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 732.781, -0.25, 0, 0.25, 0, -251.408, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 2.1, 23 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("planète_rouge:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 900, -0.25, 0, 0.25, 0, 900, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 5, 18 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("planète_rouge:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 755.641, -0.25, 0, 0.25, 0, -250.771, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 5, 18 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("StarShip:position:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( -468.594, -0.25, 0, 0.25, 0, 1379.41, -0.25, 0, 0.25, 0, 1250.31, -0.25, 0, 0.25, 0, -168.548, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 16.7, 23.1, 24.5, 28.9 )
+}
+tracks/9/type = "bezier"
+tracks/9/path = NodePath("StarShip:position:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"points": PoolRealArray( 156.149, -0.25, 0, 0.25, 0, 236.149, -0.25, 0, 0.25, 0, 507.079, -0.25, 0, 0.25, 0, 228.598, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 16.7, 23.1, 24.5, 28.9 )
+}
+tracks/10/type = "bezier"
+tracks/10/path = NodePath("StarShip:rotation_degrees")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -25.5, -0.25, 0, 0.25, 0, -181.1, -0.25, 0, 0.25, 0, -153.9, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 16.7, 23.1, 24.5, 28.9 )
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 100
+use_filter = true
+extra_spacing_char = 11
+font_data = ExtResource( 1 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[node name="Credits" type="Control"]
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credit" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -251.0
+margin_top = -1407.84
+margin_right = 250.0
+margin_bottom = -486.839
+custom_fonts/font = SubResource( 1 )
+text = "credits
+
+
+Sound and graphic design:
+Coline Ledez
+
+
+
+Developers:
+Hugo Barrandon
+Antonin Devidal
+
+
+
+Project Manager:
+ivan Le Teuff
+
+
+
+
+thank you for playing zze game :)
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SceneAnimation" type="AnimationPlayer" parent="."]
+autoplay = "CreditAnimatio"
+anims/CreditAnimatio = SubResource( 2 )
+
+[node name="planète_bleue_verte" type="Sprite" parent="SceneAnimation"]
+position = Vector2( 135, -251.408 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 2 )
+
+[node name="End" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -265.0
+margin_top = -80.0
+margin_right = 265.0
+margin_bottom = 80.0001
+custom_fonts/font = SubResource( 3 )
+text = "the end"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="planète_rouge" type="Sprite" parent="."]
+position = Vector2( 900, -250.771 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
+
+[node name="StarShip" type="AnimatedSprite" parent="."]
+position = Vector2( -168.548, 228.598 )
+rotation = -2.68606
+scale = Vector2( 0.2, 0.2 )
+frames = SubResource( 4 )
+frame = 1
+playing = true
