@@ -16,6 +16,13 @@ func _ready():
 
 func _process(_delta):
 	oldMouse=get_global_mouse_position()
+	
+	if is_moving:
+		$animatedSprite.play("moving")
+	else:
+		$animatedSprite.play("default")
+	
+	
 	if get_parent().get_parent().get_parent().is_playing :
 		force = calcDir(position)
 		

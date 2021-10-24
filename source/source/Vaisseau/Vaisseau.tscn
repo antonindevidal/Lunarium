@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://ressources/Vaisseau/vaisseau.png" type="Texture" id=1]
 [ext_resource path="res://source/Vaisseau/Vaisseau.gd" type="Script" id=2]
+[ext_resource path="res://ressources/Vaisseau/vaisseau2.png" type="Texture" id=3]
+[ext_resource path="res://ressources/Vaisseau/vaisseau1.png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 22.685
@@ -26,6 +28,11 @@ animations = [ {
 "loop": true,
 "name": "default",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "moving",
+"speed": 2.0
 } ]
 
 [node name="Vaisseau" type="KinematicBody2D"]
@@ -35,11 +42,14 @@ script = ExtResource( 2 )
 shape = SubResource( 1 )
 script = SubResource( 2 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 1.40477, 3.86805 )
+[node name="animatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 1.67422, 3.47052 )
 scale = Vector2( 0.101, 0.105 )
 frames = SubResource( 3 )
+animation = "moving"
+frame = 1
+playing = true
 
 [node name="notifier" type="VisibilityNotifier2D" parent="."]
-position = Vector2( 0.707098, -0.7955 )
+position = Vector2( 0.519812, -0.7955 )
 scale = Vector2( 2.46725, 3.28042 )
