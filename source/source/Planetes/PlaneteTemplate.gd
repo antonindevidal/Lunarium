@@ -16,7 +16,7 @@ func _ready():
 	if get_node("AnimatedSprite").animation == "Vide":
 		rng.randomize()
 		var my_random_number = rng.randf_range(-1,5)
-		setColor(Couleur[my_random_number])
+		setColor(Couleur[get_parent().get_parent().getColorNumber()])
 	pass # Replace with function body.
 
 func setColor(col : String):

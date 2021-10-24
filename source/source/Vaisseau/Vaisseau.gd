@@ -39,6 +39,11 @@ func _process(_delta):
 		for i in get_slide_count():
 			if get_slide_collision(i).collider.is_in_group("Lune"):
 				victoire = true
+			elif get_slide_collision(i).collider.is_in_group("Station"):
+				get_slide_collision(i).collider.queue_free()
+				get_parent().get_parent().slide(1)
+				velocity = Vector2.ZERO;
+				get_parent().get_parent().get_parent().nbClic = 1
 			else:
 				get_parent().get_parent().gameOver()
 	

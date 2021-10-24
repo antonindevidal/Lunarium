@@ -1,25 +1,27 @@
 extends Node2D
 
 var arrayNiveau = [];
-var currentNiveau = 1;
+var currentNiveau = 2;
 
-var nbGravitator = 5;
-var test=false
+var nbGravitator = 3;
 var Vaisseau_on_screen = true;
 var ZoneChanger = 10;
-
-
+var savePoint : Vector2
+var lesChiffres=[3,2,1,4,0,2,1,4,0,3,2,1,0]
+var currentColor = 0;
 var avancement;
 var pas = 40;
 var slide =false;
 var totalDeplacement;
+
+var save=true;
+var nbCheckPoint =0;
 # Called when the node enters the scene tree for the first time.
 func _init():
 	loadNiveaux();
 	pass;
 	
 func _ready():
-	loadNiveau(0)
 	pass;
 	
 func _process(_delta):
@@ -31,7 +33,7 @@ func _process(_delta):
 			if (get_node("NiveauTemplate").get_node("Vaisseau")).victoire:
 				victoire()
 			if Input.is_action_just_pressed("Reload"):
-				loadNiveau(currentNiveau)
+				reloadNiveau()
 		if Input.is_action_just_released("AdderGravitator"):
 			addGravitator(get_global_mouse_position())
 		if slide:
@@ -41,6 +43,9 @@ func _process(_delta):
 				avancement+=pas
 			else:
 				slide = false
+				if save:
+					savePoint = get_node("NiveauTemplate/Vaisseau").position
+				get_node("NiveauTemplate/Vaisseau").is_moving = false
 	pass;
 
 func _input(event : InputEvent) -> void:
@@ -56,6 +61,7 @@ func _input(event : InputEvent) -> void:
 func loadNiveaux():
 	arrayNiveau.append("res://source/Niveaux/Niveau0/Niveau0.tscn");
 	arrayNiveau.append("res://source/Niveaux/Niveau1/Niveau1.tscn");
+	arrayNiveau.append("res://source/Niveaux/Niveau2/Niveau2.tscn");
 	pass;
 
 func nextNiveau():
@@ -68,11 +74,18 @@ func loadNiveau(nb):
 	var tmp : Node =load(arrayNiveau[nb]).instance()
 	tmp.name = "NiveauTemplate"
 	add_child(tmp);
+	nbGravitator=3;
+	currentColor = 0;
+	nbCheckPoint=0;
+	
 func reloadNiveau():
-	remove_child(get_child(0));
-	var tmp : Node =load(arrayNiveau[currentNiveau]).instance()
-	tmp.name = "NiveauTemplate"
-	add_child(tmp);
+	get_node("NiveauTemplate/Vaisseau").is_moving =false
+	get_node("NiveauTemplate/Vaisseau").velocity = Vector2.ZERO
+	get_node("NiveauTemplate/Vaisseau").position = savePoint
+	for i in get_node("NiveauTemplate").get_children():
+		if i.is_in_group("Planete"):
+			if i.get_node("AnimatedSprite").animation == "Gravitator":
+				i.queue_free()
 
 func gameOver():
 	get_parent().setGameOver()
@@ -81,16 +94,14 @@ func victoire():
 	print("Victoire")
 	if currentNiveau < arrayNiveau.size()-1:
 		nextNiveau()
-	if test:
-		slide(1)
-		test=false
-		get_node("NiveauTemplate/Vaisseau").velocity = Vector2.ZERO
 
 func addGravitator(coord):
-	var grav = preload("res://source/Planetes/PlaneteTemplate.tscn").instance();
-	grav.init(coord);
-	grav.setColor("Gravitator")
-	get_node("NiveauTemplate").add_child(grav);
+	if nbGravitator > 0:
+		var grav = preload("res://source/Planetes/PlaneteTemplate.tscn").instance();
+		grav.init(coord);
+		grav.setColor("Gravitator")
+		get_node("NiveauTemplate").add_child(grav);
+		nbGravitator-=1;
 
 func changeZone(val, pos : Vector2):
 	for i in get_node("NiveauTemplate").get_children():
@@ -103,4 +114,9 @@ func changeZone(val, pos : Vector2):
 func slide(nb : int):
 	avancement = 0;
 	slide = true;
-	totalDeplacement = 1920*nb*1.5
+	totalDeplacement = (get_node("NiveauTemplate/Vaisseau").position.x - get_parent().position.x)+1500
+	
+func getColorNumber():
+	var oldcolor = currentColor
+	currentColor = (currentColor+1)%lesChiffres.size()
+	return lesChiffres[oldcolor]

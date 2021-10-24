@@ -18,7 +18,7 @@ func _process(_delta):
 			get_node("GameOver").visible = false;
 			
 			get_node("ManageurNiveau").visible = true;
-			get_node("ManageurNiveau").reloadNiveau()
+			get_node("ManageurNiveau").loadNiveau(2)
 			is_playing = true
 		nbClic = nbClic +1;
 	if Input.is_action_just_pressed("Exit"):

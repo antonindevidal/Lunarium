@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://source/Station/Station.tscn" type="PackedScene" id=1]
+[ext_resource path="res://source/Vaisseau/Vaisseau.tscn" type="PackedScene" id=2]
+[ext_resource path="res://source/Planetes/PlaneteTemplate.tscn" type="PackedScene" id=3]
+
+[node name="Niveau2" type="Node2D"]
+
+[node name="Vaisseau" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1184, 0 )
+
+[node name="Station" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1360, -8 )
+
+[node name="PlaneteTemplate" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2496, -104 )
