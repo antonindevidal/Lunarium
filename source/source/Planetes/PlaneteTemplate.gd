@@ -22,3 +22,7 @@ func _ready():
 func setColor(col : String):
 	get_node("AnimatedSprite").animation = col
 	get_node("ZoneGrav").animation = col
+
+func changeRadius(addVal):
+	radius = radius + addVal
+	get_node("ZoneGrav").scale = get_node("ZoneGrav").scale + Vector2.ONE * (2*addVal)/100
