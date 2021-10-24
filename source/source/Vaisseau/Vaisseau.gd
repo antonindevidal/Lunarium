@@ -42,16 +42,18 @@ func _process(_delta):
 		else:
 			firstSortie = true
 		for i in get_slide_count():
-			if get_slide_collision(i).collider.is_in_group("Lune"):
-				victoire = true
-			elif get_slide_collision(i).collider.is_in_group("Station"):
-				get_slide_collision(i).collider.queue_free()
-				get_parent().get_parent().slide(1)
-				velocity = Vector2.ZERO;
-				get_parent().get_parent().get_parent().nbClic = 1
-			else:
-				if position.distance_to(get_slide_collision(i).collider.position)<170:
-					get_parent().get_parent().gameOver()
+			
+			if get_slide_collision(i).collider:
+				if get_slide_collision(i).collider.is_in_group("Lune"):
+					victoire = true
+				elif get_slide_collision(i).collider.is_in_group("Station"):
+					get_slide_collision(i).collider.queue_free()
+					get_parent().get_parent().slide(1)
+					velocity = Vector2.ZERO;
+					get_parent().get_parent().get_parent().nbClic = 1
+				else:
+					if position.distance_to(get_slide_collision(i).collider.position)<170:
+						get_parent().get_parent().gameOver()
 	
 func launch(dest):
 	velocity = (dest - position).normalized() * speed;

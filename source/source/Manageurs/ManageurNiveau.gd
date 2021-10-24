@@ -1,7 +1,7 @@
 extends Node2D
 
 var arrayNiveau = [];
-var currentNiveau = 2;
+var currentNiveau = 0;
 
 var nbGravitator = 3;
 var Vaisseau_on_screen = true;
@@ -25,6 +25,8 @@ func _ready():
 	pass;
 	
 func _process(_delta):
+	if Input.is_action_just_released("Skip"):
+		nextNiveau()
 	if get_parent().is_playing :
 		if get_parent().nbClic > 1:
 			Vaisseau_on_screen = (get_node("NiveauTemplate").get_node("Vaisseau")).is_on_screen()
@@ -62,6 +64,7 @@ func loadNiveaux():
 	arrayNiveau.append("res://source/Niveaux/Niveau0/Niveau0.tscn");
 	arrayNiveau.append("res://source/Niveaux/Niveau1/Niveau1.tscn");
 	arrayNiveau.append("res://source/Niveaux/Niveau2/Niveau2.tscn");
+	arrayNiveau.append("res://source/Niveaux/Niveau3/Niveau3.tscn");
 	pass;
 
 func nextNiveau():
@@ -86,6 +89,7 @@ func reloadNiveau():
 	get_node("NiveauTemplate/Vaisseau").is_moving =false
 	get_node("NiveauTemplate/Vaisseau").velocity = Vector2.ZERO
 	get_node("NiveauTemplate/Vaisseau").position = savePoint
+	nbGravitator = 3;
 	for i in get_node("NiveauTemplate").get_children():
 		if i.is_in_group("Planete"):
 			if i.get_node("AnimatedSprite").animation == "Gravitator":
