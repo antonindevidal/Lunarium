@@ -22,6 +22,10 @@ func _ready():
 func setColor(col : String):
 	get_node("AnimatedSprite").animation = col
 	get_node("ZoneGrav").animation = col
+	if col == "Gravitator":
+		rng.randomize()
+		var my_random_number = rng.randf_range(0,2*PI)
+		get_node("AnimatedSprite").rotate(my_random_number)
 
 func changeRadius(addVal):
 	radius = radius + addVal
