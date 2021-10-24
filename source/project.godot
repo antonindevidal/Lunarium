@@ -14,11 +14,6 @@ config/name="GameJam_Spooktober"
 run/main_scene="res://source/Game.tscn"
 config/icon="res://icon.png"
 
-[display]
-
-window/size/resizable=false
-window/size/fullscreen=true
-
 [input]
 
 launch={

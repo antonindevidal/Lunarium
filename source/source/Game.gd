@@ -19,10 +19,11 @@ func _process(_delta):
 	if Input.is_action_just_pressed("Exit"):
 		get_tree().quit()
 
-func _myResize():
+func myResize():
 	var ratio = Vector2.ZERO
 	ratio.x = oldWindowSize.x/get_viewport().size.x
 	get_node("Camera2D").zoom.x = get_node("Camera2D").zoom.x*ratio.x
 	
 	ratio.y = oldWindowSize.y/get_viewport().size.y
 	get_node("Camera2D").zoom.y = get_node("Camera2D").zoom.y*ratio.y
+	oldWindowSize = get_viewport().size
