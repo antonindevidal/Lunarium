@@ -55,7 +55,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 15, 25 )
 }
 tracks/4/type = "bezier"
-tracks/4/path = NodePath("SceneAnimation/planète_bleue_verte:position:x")
+tracks/4/path = NodePath("planète_bleue_verte:position:x")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -65,7 +65,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 2.1, 23 )
 }
 tracks/5/type = "bezier"
-tracks/5/path = NodePath("SceneAnimation/planète_bleue_verte:position:y")
+tracks/5/path = NodePath("planète_bleue_verte:position:y")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -188,11 +188,6 @@ __meta__ = {
 autoplay = "CreditAnimatio"
 anims/CreditAnimatio = SubResource( 2 )
 
-[node name="planète_bleue_verte" type="Sprite" parent="SceneAnimation"]
-position = Vector2( 135, -251.408 )
-scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 2 )
-
 [node name="End" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -218,4 +213,10 @@ position = Vector2( -168.548, 228.598 )
 rotation = -2.68606
 scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 4 )
+frame = 1
 playing = true
+
+[node name="planète_bleue_verte" type="Sprite" parent="."]
+position = Vector2( 135, -251.408 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 2 )

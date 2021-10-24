@@ -28,7 +28,7 @@ func _process(_delta):
 	if Input.is_action_just_released("Skip"):
 		nextNiveau()
 	if get_parent().is_playing :
-		if get_parent().nbClic > 1:
+		if get_parent().nbClic > 2:
 			Vaisseau_on_screen = (get_node("NiveauTemplate").get_node("Vaisseau")).is_on_screen()
 			if not Vaisseau_on_screen:
 				gameOver()
@@ -69,7 +69,10 @@ func loadNiveaux():
 
 func nextNiveau():
 	currentNiveau=currentNiveau + 1;
-	loadNiveau(currentNiveau)
+	if currentNiveau < 4:
+		loadNiveau(currentNiveau)
+	else:
+		get_parent().runEnd()
 	pass;
 
 func loadNiveau(nb):

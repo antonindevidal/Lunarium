@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://ressources/Fond/fond_couleur.png" type="Texture" id=1]
 [ext_resource path="res://source/Game.gd" type="Script" id=2]
@@ -9,6 +9,9 @@
 [ext_resource path="res://source/Manageurs/ManageurNiveau.tscn" type="PackedScene" id=7]
 [ext_resource path="res://ressources/Audio/lunaire_epique.wav" type="AudioStream" id=8]
 [ext_resource path="res://ressources/Audio/lunaire_melancolique_raccourcie.wav" type="AudioStream" id=9]
+[ext_resource path="res://source/Layouts/CinematiqueDebut/CinematiqueDebut.tscn" type="PackedScene" id=10]
+[ext_resource path="res://source/Layouts/CinematiqueFin/CinematiqueDebut.tscn" type="PackedScene" id=11]
+[ext_resource path="res://source/Layouts/Credits/Credits.tscn" type="PackedScene" id=12]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 2 )
@@ -94,3 +97,29 @@ stream = ExtResource( 8 )
 
 [node name="AudioMel" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
+
+[node name="CinematiqueDebut" parent="." instance=ExtResource( 10 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -1800.0
+margin_top = -1080.0
+margin_right = -1800.0
+margin_bottom = -1080.0
+rect_scale = Vector2( 3.8, 3.8 )
+
+[node name="Credits" parent="." instance=ExtResource( 12 )]
+visible = false
+margin_left = -1900.0
+margin_top = -1000.0
+margin_right = -1900.0
+margin_bottom = -1000.0
+rect_scale = Vector2( 3.8, 3.8 )
+
+[node name="Cinematique" parent="." instance=ExtResource( 11 )]
+visible = false
+margin_left = -1800.0
+margin_top = -1080.0
+margin_right = -1800.0
+margin_bottom = -1080.0
+rect_scale = Vector2( 3.8, 3.8 )
