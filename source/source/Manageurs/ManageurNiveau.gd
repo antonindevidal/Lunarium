@@ -77,6 +77,10 @@ func loadNiveau(nb):
 	nbGravitator=3;
 	currentColor = 0;
 	nbCheckPoint=0;
+	savePoint = tmp.get_node("Vaisseau").position
+	
+func loadNiveauCurrent():
+	loadNiveau(currentNiveau)
 	
 func reloadNiveau():
 	get_node("NiveauTemplate/Vaisseau").is_moving =false
