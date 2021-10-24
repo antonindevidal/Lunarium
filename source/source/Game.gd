@@ -41,14 +41,17 @@ func _process(_delta):
 			get_node("Credits/SceneAnimation").play()
 			credit = true;
 		elif cinDebut or gameOver:
-			start=false
 			get_node("CinematiqueDebut").visible = false;
 			get_node("GameOver").visible = false;
 			get_node("ManageurNiveau").visible = true;
-			if reload: 
-				get_node("ManageurNiveau").reloadNiveau()
-			else:
-				get_node("ManageurNiveau").loadNiveauCurrent()
+			if gameOver or start:
+				if reload: 
+					get_node("ManageurNiveau").reloadNiveau()
+					reload=false
+				else:
+					get_node("ManageurNiveau").loadNiveauCurrent()
+				gameOver=false
+				start=false
 			cinDebut = false;
 			is_playing = true;
 			if not $AudioEpic.playing:
