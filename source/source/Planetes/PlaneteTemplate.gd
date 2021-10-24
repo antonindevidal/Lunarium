@@ -20,6 +20,5 @@ func _ready():
 	pass # Replace with function body.
 
 func setColor(col : String):
-	print(col)
 	get_node("AnimatedSprite").animation = col
 	get_node("ZoneGrav").animation = col

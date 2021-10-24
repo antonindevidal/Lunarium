@@ -36,7 +36,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 2.5, 5 )
 }
 
-[node name="Control" type="Control"]
+[node name="GameOver" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -44,7 +44,7 @@ __meta__ = {
 }
 
 [node name="Planete" type="Sprite" parent="."]
-position = Vector2( 150, 296.243 )
+position = Vector2( 150, 150 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
@@ -81,4 +81,5 @@ __meta__ = {
 }
 
 [node name="PlanetAnimation" type="AnimationPlayer" parent="."]
+autoplay = "PlanetUpDown"
 anims/PlanetUpDown = SubResource( 3 )

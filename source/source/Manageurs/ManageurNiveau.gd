@@ -5,7 +5,7 @@ var currentNiveau = 0;
 var is_playing = false;
 
 var nbGravitator = 5;
-
+var test=true
 var Vaisseau_on_screen = true;
 # Called when the node enters the scene tree for the first time.
 func _init():
@@ -52,8 +52,13 @@ func gameOver():
 	
 func victoire():
 	print("Victoire")
-	if currentNiveau < arrayNiveau.size()-1:
-		nextNiveau()
+	#if currentNiveau < arrayNiveau.size()-1:
+	#	nextNiveau()
+	if test:
+		get_parent().scrollCam(1)
+	test=false
+	get_node("NiveauTemplate/Vaisseau").velocity = Vector2.ZERO;
+	get_node("NiveauTemplate/Vaisseau").is_moving = false;
 
 func addGravitator(coord):
 	var grav = preload("res://source/Planetes/PlaneteTemplate.tscn").instance();
