@@ -37,6 +37,7 @@ rect_scale = Vector2( 2, 2 )
 [node name="Fond" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/Fond"]
+position = Vector2( -4, -4 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 
@@ -64,6 +65,7 @@ z_index = 1
 texture = ExtResource( 6 )
 
 [node name="Couche1" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
 z_index = 2
 
 [node name="Sprite00" type="Sprite" parent="ParallaxBackground/Couche1"]
