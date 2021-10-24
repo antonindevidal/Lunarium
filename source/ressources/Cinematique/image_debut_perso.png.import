@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/image_debut_perso.png-7c4ca74d196a8b506c703a92153732cd.stex"
+path="res://.import/image_debut_perso.png-e812fee580df9c4dec6c3c2d6f5bd62a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/CinemmatiqueDebut/image_debut_perso.png"
-dest_files=[ "res://.import/image_debut_perso.png-7c4ca74d196a8b506c703a92153732cd.stex" ]
+source_file="res://ressources/Cinematique/image_debut_perso.png"
+dest_files=[ "res://.import/image_debut_perso.png-e812fee580df9c4dec6c3c2d6f5bd62a.stex" ]
 
 [params]
 

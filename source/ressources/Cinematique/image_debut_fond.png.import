@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/image_debut_fond.png-442fe03d5ff040d864e3b71a87bdb036.stex"
+path="res://.import/image_debut_fond.png-bf012064e2ab5e46b4b2e6eed1cf4e00.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/CinemmatiqueDebut/image_debut_fond.png"
-dest_files=[ "res://.import/image_debut_fond.png-442fe03d5ff040d864e3b71a87bdb036.stex" ]
+source_file="res://ressources/Cinematique/image_debut_fond.png"
+dest_files=[ "res://.import/image_debut_fond.png-bf012064e2ab5e46b4b2e6eed1cf4e00.stex" ]
 
 [params]
 

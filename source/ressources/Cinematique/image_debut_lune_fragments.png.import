@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/image_debut_vaisseau.png-474dba38e319d1b2b5316998772d60e8.stex"
+path="res://.import/image_debut_lune_fragments.png-8a1a9e9906728ecbb999bfe59d06acee.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/CinemmatiqueDebut/image_debut_vaisseau.png"
-dest_files=[ "res://.import/image_debut_vaisseau.png-474dba38e319d1b2b5316998772d60e8.stex" ]
+source_file="res://ressources/Cinematique/image_debut_lune_fragments.png"
+dest_files=[ "res://.import/image_debut_lune_fragments.png-8a1a9e9906728ecbb999bfe59d06acee.stex" ]
 
 [params]
 
