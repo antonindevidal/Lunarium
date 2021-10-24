@@ -16,6 +16,7 @@ animations = [ {
 [node name="BoutLune" type="StaticBody2D" groups=[
 "Lune",
 ]]
+z_index = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

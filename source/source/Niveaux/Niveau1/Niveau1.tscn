@@ -7,13 +7,16 @@
 [node name="Niveau1" type="Node2D"]
 
 [node name="Vaisseau" parent="." instance=ExtResource( 2 )]
-position = Vector2( -944, 8 )
+position = Vector2( -952, 472 )
 
 [node name="BoutLune" parent="." instance=ExtResource( 3 )]
-position = Vector2( 8, 392 )
+position = Vector2( 848, -824 )
 
 [node name="PlaneteTemplate" parent="." instance=ExtResource( 1 )]
-position = Vector2( -208, 72.0174 )
+position = Vector2( -304, 152 )
 
-[node name="PlaneteTemplate" parent="PlaneteTemplate" instance=ExtResource( 1 )]
-position = Vector2( 80, 407.983 )
+[node name="PlaneteTemplate2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 568, -424 )
+
+[node name="PlaneteTemplate3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 456, 232 )
