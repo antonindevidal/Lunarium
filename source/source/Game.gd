@@ -20,11 +20,14 @@ func _ready():
 	get_node("CinematiqueDebut/AnimationPlayer").stop()
 	get_node("Cinematique/AnimationPlayer").stop()
 	get_node("Credits/SceneAnimation").stop()
+	$AudioMel.play()
 	pass # Replace with function body.
 
 func _process(_delta):
 	if Input.is_action_just_released("launch"):
 		if credit:
+			$AudioVic.stop()
+			$AudioMel.play()
 			$Credits.visible = false;
 			nbClic=0;
 			$StartMenu.visible = true;
@@ -47,6 +50,8 @@ func _process(_delta):
 				get_node("ManageurNiveau").loadNiveauCurrent()
 			cinDebut = false;
 			is_playing = true;
+			$AudioEpic.play()
+			$AudioMel.stop()
 		elif start:
 			$ManageurNiveau.currentNiveau=0
 			get_node("StartMenu").visible = false;
@@ -56,14 +61,10 @@ func _process(_delta):
 		nbClic = nbClic +1;
 	if Input.is_action_just_pressed("Exit"):
 		get_tree().quit()
-	if is_playing and $AudioEpic.playing == false:
-		$AudioMel.stop()
-		$AudioEpic.play()
-	if not is_playing and $AudioMel.playing == false:
-		$AudioEpic.stop()
-		$AudioMel.play()
 
 func runEnd():
+	$AudioEpic.stop()
+	$AudioVic.play()
 	$ManageurNiveau.visible = false;
 	is_playing=false
 	get_node("Cinematique").visible=true
