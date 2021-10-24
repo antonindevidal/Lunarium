@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/image_debut_lune.png-5955139ff46241831888fe74e41ce6d6.stex"
+path="res://.import/nuage.png-7441b7a92929d154f7560be5c2b1ed90.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/CinemmatiqueDebut/image_debut_lune.png"
-dest_files=[ "res://.import/image_debut_lune.png-5955139ff46241831888fe74e41ce6d6.stex" ]
+source_file="res://ressources/Cinematique/nuage.png"
+dest_files=[ "res://.import/nuage.png-7441b7a92929d154f7560be5c2b1ed90.stex" ]
 
 [params]
 
