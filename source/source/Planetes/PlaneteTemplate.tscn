@@ -20,9 +20,19 @@ animations = [ {
 "name": "Rouge",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "Bleu",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "Jaune",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "Vert",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ) ],
@@ -35,24 +45,14 @@ animations = [ {
 "name": "Vide",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "Bleu",
-"speed": 5.0
-}, {
 "frames": [  ],
 "loop": true,
 "name": "Gravitator",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "Vert",
-"speed": 5.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 48.0
+radius = 96.3328
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
@@ -61,9 +61,19 @@ animations = [ {
 "name": "Rouge",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "Bleu",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 8 ) ],
 "loop": true,
 "name": "Jaune",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "Vert",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ) ],
@@ -76,19 +86,9 @@ animations = [ {
 "name": "Vide",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "Bleu",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "Gravitator",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ) ],
-"loop": true,
-"name": "Vert",
 "speed": 5.0
 } ]
 
@@ -98,7 +98,7 @@ animations = [ {
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.15, 0.15 )
+scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 1 )
 animation = "Vide"
 
@@ -106,6 +106,6 @@ animation = "Vide"
 shape = SubResource( 2 )
 
 [node name="ZoneGrav" type="AnimatedSprite" parent="."]
-scale = Vector2( 4, 4 )
+scale = Vector2( 6, 6 )
 frames = SubResource( 3 )
 animation = "Vide"

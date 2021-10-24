@@ -33,14 +33,6 @@ func myResize():
 	get_node("Camera2D").zoom.y = get_node("Camera2D").zoom.y*ratio.y
 	oldWindowSize = get_viewport().size
 
-func scrollCam(nbSlide):
-	var dest =get_node("Camera2D").position.x + 1920*nbSlide
-	var speed = 1;
-	while get_node("Camera2D").position.x < dest:
-		print(get_node("Camera2D").position.x)
-		get_node("Camera2D").position.x = get_node("Camera2D").position.x + speed
-		get_node("Camera2D").force_update_scroll()
-
 func setGameOver():
 	is_playing = false;
 	get_node("GameOver").visible = true;
