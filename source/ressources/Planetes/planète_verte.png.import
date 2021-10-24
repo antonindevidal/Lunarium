@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Vaisseau.png-95dd1aca6a3074c2505652d9a3a8f68b.stex"
+path="res://.import/planète_verte.png-b60610c57156144d21ef8b03a9e22ab7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ressources/Vaisseau/Vaisseau.png"
-dest_files=[ "res://.import/Vaisseau.png-95dd1aca6a3074c2505652d9a3a8f68b.stex" ]
+source_file="res://ressources/Planetes/planète_verte.png"
+dest_files=[ "res://.import/planète_verte.png-b60610c57156144d21ef8b03a9e22ab7.stex" ]
 
 [params]
 
