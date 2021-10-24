@@ -1,7 +1,7 @@
 extends Node2D
 
 var arrayNiveau = [];
-var currentNiveau = 3;
+var currentNiveau = 0;
 
 var nbGravitator = 3;
 var Vaisseau_on_screen = true;

@@ -26,7 +26,13 @@ func _process(_delta):
 		nbClic = nbClic +1;
 	if Input.is_action_just_pressed("Exit"):
 		get_tree().quit()
-
+	if is_playing and $AudioEpic.playing == false:
+		$AudioMel.stop()
+		$AudioEpic.play()
+	if not is_playing and $AudioMel.playing == false:
+		$AudioEpic.stop()
+		$AudioMel.play()
+	print($AudioEpic.playing)
 
 func myResize():
 	var ratio = Vector2.ZERO
