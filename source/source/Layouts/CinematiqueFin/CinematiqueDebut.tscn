@@ -110,8 +110,8 @@ margin_right = 368.231
 margin_bottom = 46.2896
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Les 4 morceaux ont été retrouvé.
- félicitations jeune explorateur ! "
+text = "Les 4 morceaux ont été retrouvés.
+ félicitations, jeune explorateur ! "
 align = 1
 valign = 1
 __meta__ = {
