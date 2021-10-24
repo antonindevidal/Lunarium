@@ -8,6 +8,7 @@ var cinDebut= false;
 var cinFin= false;
 var credit= false;
 var start = true;
+var gameOver = false
 func _init():
 	pass
 
@@ -39,7 +40,7 @@ func _process(_delta):
 			$Credits.visible = true;
 			get_node("Credits/SceneAnimation").play()
 			credit = true;
-		elif cinDebut:
+		elif cinDebut or gameOver:
 			start=false
 			get_node("CinematiqueDebut").visible = false;
 			get_node("GameOver").visible = false;
@@ -50,8 +51,9 @@ func _process(_delta):
 				get_node("ManageurNiveau").loadNiveauCurrent()
 			cinDebut = false;
 			is_playing = true;
-			$AudioEpic.play()
-			$AudioMel.stop()
+			if not $AudioEpic.playing:
+				$AudioEpic.play()
+				$AudioMel.stop()
 		elif start:
 			$ManageurNiveau.currentNiveau=0
 			get_node("StartMenu").visible = false;
@@ -80,6 +82,7 @@ func myResize():
 	oldWindowSize = get_viewport().size
 
 func setGameOver():
+	gameOver=true
 	is_playing = false;
 	get_node("GameOver").visible = true;
 	get_node("ManageurNiveau").visible = false;
