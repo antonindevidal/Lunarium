@@ -26,14 +26,9 @@ animations = [ {
 "name": "Gravitator",
 "speed": 5.0
 }, {
-"frames": [  ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
-"name": "Vide",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "Rose",
+"name": "Vert",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1 ) ],
@@ -46,9 +41,14 @@ animations = [ {
 "name": "Jaune",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 6 ) ],
 "loop": true,
-"name": "Vert",
+"name": "Rose",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Vide",
 "speed": 5.0
 } ]
 
@@ -67,14 +67,9 @@ animations = [ {
 "name": "Gravitator",
 "speed": 5.0
 }, {
-"frames": [  ],
+"frames": [ ExtResource( 11 ) ],
 "loop": true,
-"name": "Vide",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "Rose",
+"name": "Vert",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 7 ) ],
@@ -87,9 +82,14 @@ animations = [ {
 "name": "Jaune",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 11 ) ],
+"frames": [ ExtResource( 9 ) ],
 "loop": true,
-"name": "Vert",
+"name": "Rose",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Vide",
 "speed": 5.0
 } ]
 
@@ -109,4 +109,4 @@ shape = SubResource( 2 )
 [node name="ZoneGrav" type="AnimatedSprite" parent="."]
 scale = Vector2( 6, 6 )
 frames = SubResource( 3 )
-animation = "Vide"
+animation = "Bleu"
