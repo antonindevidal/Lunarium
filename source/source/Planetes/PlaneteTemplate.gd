@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-export var forceAttraction = 0.02;
+export var forceAttraction = 0.05;
 var radius = 300;
 var Couleur = ["Rouge", "Bleu", "Vert", "Jaune","Rose"]
 var rng = RandomNumberGenerator.new()

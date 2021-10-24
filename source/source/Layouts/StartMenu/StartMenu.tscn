@@ -93,7 +93,7 @@ position = Vector2( -403.377, 333.611 )
 rotation = -0.106072
 scale = Vector2( 0.3, 0.3 )
 frames = SubResource( 1 )
-animation = "New Anim"
+frame = 1
 playing = true
 
 [node name="TitleText" type="Label" parent="."]

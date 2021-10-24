@@ -1,12 +1,12 @@
 extends Node2D
 
 var arrayNiveau = [];
-var currentNiveau = 0;
+var currentNiveau = 1;
 
 var nbGravitator = 5;
 var test=false
 var Vaisseau_on_screen = true;
-var ZoneChanger = 5;
+var ZoneChanger = 10;
 
 
 var avancement;
