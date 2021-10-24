@@ -16,7 +16,7 @@ func _process(_delta):
 		if not is_playing:
 			get_node("StartMenu").visible = false;
 			get_node("GameOver").visible = false;
-			get_node("Credits").visible = false
+
 			
 			get_node("ManageurNiveau").visible = true;
 			get_node("ManageurNiveau").reloadNiveau()
@@ -24,20 +24,6 @@ func _process(_delta):
 		nbClic = nbClic +1;
 	if Input.is_action_just_pressed("Exit"):
 		get_tree().quit()
-
-func showCredits():
-	get_node("StartMenu").visible = false;
-	get_node("GameOver").visible = false;
-	get_node("Credits").visible = true
-	get_node("ManageurNiveau").visible = false;
-	pass
-
-func showMainMenu():
-	get_node("StartMenu").visible = true;
-	get_node("GameOver").visible = false;
-	get_node("Credits").visible = false
-	get_node("ManageurNiveau").visible = false;
-	pass
 
 
 func myResize():
