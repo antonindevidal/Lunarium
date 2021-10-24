@@ -2,7 +2,6 @@ extends Node2D
 
 var arrayNiveau = [];
 var currentNiveau = 0;
-var is_playing = false;
 
 var nbGravitator = 5;
 var test=true
@@ -17,16 +16,16 @@ func _ready():
 	pass;
 	
 func _process(_delta):
-	is_playing = true
-	if is_playing:
-		Vaisseau_on_screen = (get_node("NiveauTemplate").get_node("Vaisseau")).is_on_screen()
-		if not Vaisseau_on_screen:
-			gameOver()
-		if (get_node("NiveauTemplate").get_node("Vaisseau")).victoire:
-			victoire()
-			
-		if Input.is_action_just_pressed("Reload"):
-			loadNiveau(currentNiveau)
+	if get_parent().is_playing :
+		if get_parent().nbClic > 1:
+			Vaisseau_on_screen = (get_node("NiveauTemplate").get_node("Vaisseau")).is_on_screen()
+			if not Vaisseau_on_screen:
+				gameOver()
+			if (get_node("NiveauTemplate").get_node("Vaisseau")).victoire:
+				victoire()
+				
+			if Input.is_action_just_pressed("Reload"):
+				loadNiveau(currentNiveau)
 		if Input.is_action_just_released("AdderGravitator"):
 			addGravitator(get_global_mouse_position())
 	pass;
@@ -46,19 +45,19 @@ func loadNiveau(nb):
 	var tmp : Node =load(arrayNiveau[nb]).instance()
 	tmp.name = "NiveauTemplate"
 	add_child(tmp);
+func reloadNiveau():
+	remove_child(get_child(0));
+	var tmp : Node =load(arrayNiveau[currentNiveau]).instance()
+	tmp.name = "NiveauTemplate"
+	add_child(tmp);
 
 func gameOver():
-	print("GameOver")
+	get_parent().setGameOver()
 	
 func victoire():
 	print("Victoire")
-	#if currentNiveau < arrayNiveau.size()-1:
-	#	nextNiveau()
-	if test:
-		get_parent().scrollCam(1)
-	test=false
-	get_node("NiveauTemplate/Vaisseau").velocity = Vector2.ZERO;
-	get_node("NiveauTemplate/Vaisseau").is_moving = false;
+	if currentNiveau < arrayNiveau.size()-1:
+		nextNiveau()
 
 func addGravitator(coord):
 	var grav = preload("res://source/Planetes/PlaneteTemplate.tscn").instance();
