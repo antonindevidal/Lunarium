@@ -2,6 +2,7 @@ extends Node2D
 
 var is_playing = false
 var oldWindowSize;
+var reload = false;
 var nbClic = 0;
 func _init():
 	pass
@@ -16,10 +17,11 @@ func _process(_delta):
 		if not is_playing:
 			get_node("StartMenu").visible = false;
 			get_node("GameOver").visible = false;
-
-			
 			get_node("ManageurNiveau").visible = true;
-			get_node("ManageurNiveau").loadNiveau(2)
+			if reload: 
+				get_node("ManageurNiveau").reloadNiveau()
+			else:
+				get_node("ManageurNiveau").loadNiveauCurrent()
 			is_playing = true
 		nbClic = nbClic +1;
 	if Input.is_action_just_pressed("Exit"):
@@ -39,3 +41,4 @@ func setGameOver():
 	get_node("GameOver").visible = true;
 	get_node("ManageurNiveau").visible = false;
 	nbClic = 0;
+	reload = true;

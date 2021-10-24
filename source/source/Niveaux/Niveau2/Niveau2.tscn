@@ -1,16 +1,59 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://source/Station/Station.tscn" type="PackedScene" id=1]
 [ext_resource path="res://source/Vaisseau/Vaisseau.tscn" type="PackedScene" id=2]
 [ext_resource path="res://source/Planetes/PlaneteTemplate.tscn" type="PackedScene" id=3]
+[ext_resource path="res://source/Collectibles/BoutLune.tscn" type="PackedScene" id=4]
 
 [node name="Niveau2" type="Node2D"]
+position = Vector2( 1, 0 )
+
+[node name="PlaneteTemplate12" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3487, -128 )
+
+[node name="PlaneteTemplate11" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3111, 448 )
 
 [node name="Vaisseau" parent="." instance=ExtResource( 2 )]
-position = Vector2( -1184, 0 )
+position = Vector2( -1696, 16 )
 
 [node name="Station" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1360, -8 )
+position = Vector2( 1480, 8 )
+scale = Vector2( 1, 0.5 )
 
 [node name="PlaneteTemplate" parent="." instance=ExtResource( 3 )]
-position = Vector2( 2496, -104 )
+position = Vector2( 2735, -128 )
+
+[node name="PlaneteTemplate2" parent="." instance=ExtResource( 3 )]
+position = Vector2( -968, 8 )
+
+[node name="PlaneteTemplate3" parent="." instance=ExtResource( 3 )]
+position = Vector2( -32, 0 )
+
+[node name="PlaneteTemplate4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 768, -8 )
+
+[node name="PlaneteTemplate5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2367, 464 )
+
+[node name="PlaneteTemplate6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 3799, 448 )
+
+[node name="Station2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 4592, 272 )
+scale = Vector2( 1, 0.5 )
+
+[node name="PlaneteTemplate7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 6055, -768 )
+
+[node name="PlaneteTemplate8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 6455, -496 )
+
+[node name="PlaneteTemplate9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 6071, -128 )
+
+[node name="PlaneteTemplate10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 5687, -488 )
+
+[node name="BoutLune" parent="." instance=ExtResource( 4 )]
+position = Vector2( 6079, -455.17 )
