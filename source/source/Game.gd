@@ -8,7 +8,8 @@ var cinDebut= false;
 var cinFin= false;
 var credit= false;
 var start = true;
-var gameOver = false
+var gameOver = false;
+
 func _init():
 	pass
 
@@ -66,6 +67,15 @@ func _process(_delta):
 		nbClic = nbClic +1;
 	if Input.is_action_just_pressed("Exit"):
 		get_tree().quit()
+	if credit or cinFin:
+		if not $AudioVic.playing:
+			$AudioVic.play()
+	if start or cinDebut:
+		if not $AudioMel.playing:
+			$AudioMel.play()
+	if is_playing:
+		if not $AudioEpic.playing:
+			$AudioEpi.play()
 
 func runEnd():
 	$AudioEpic.stop()

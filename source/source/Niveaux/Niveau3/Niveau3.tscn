@@ -106,3 +106,6 @@ position = Vector2( 5894, -200 )
 
 [node name="PlaneteTemplate29" parent="." instance=ExtResource( 2 )]
 position = Vector2( 5638, -944 )
+
+[node name="BoutLune2" parent="." instance=ExtResource( 4 )]
+position = Vector2( -1362, 384 )

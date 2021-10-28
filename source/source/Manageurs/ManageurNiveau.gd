@@ -25,7 +25,6 @@ func _ready():
 	pass;
 	
 func _process(_delta):
-	print(get_parent().is_playing)
 	if Input.is_action_just_released("Skip"):
 		nextNiveau()
 	if get_parent().is_playing :
@@ -103,8 +102,7 @@ func gameOver():
 	get_parent().setGameOver()
 	
 func victoire():
-	if currentNiveau < arrayNiveau.size()-1:
-		nextNiveau()
+	nextNiveau()
 
 func addGravitator(coord):
 	if nbGravitator > 0:
